@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>3D Milky Way Galaxy Explorer</title>
+    
+    <!-- Link stylesheet(s) -->
+    <link rel="stylesheet" href="galaxy.css">
+    <!-- If your CSS is inside a subfolder, use e.g. href="css/styles.css" -->
+</head>
+<body>
+    <div id="galaxy-container"></div>
+    
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-title">MILKY WAY EXPLORER</div>
+        <div class="loading-text">Initializing galactic navigation systems...</div>
+        <div class="loading-progress">
+            <div class="loading-fill"></div>
+        </div>
+    </div>
+    
+    <!-- HUD Interface -->
+    <div class="hud" id="hud">
+        <!-- Galaxy Information Panel -->
+        <div class="hud-panel top-left">
+            <div class="panel-title">Galaxy Data</div>
+            <div class="data-item">
+                <span class="data-label">Stars Visible:</span>
+                <span class="data-value" id="starCount">0</span>
+            </div>
+            <div class="data-item">
+                <span class="data-label">Distance:</span>
+                <span class="data-value" id="distance">26,000 ly</span>
+            </div>
+            <div class="data-item">
+                <span class="data-label">Zoom Level:</span>
+                <span class="data-value" id="zoomLevel">1.0x</span>
+            </div>
+            <div class="data-item">
+                <span class="data-label">Rotation:</span>
+                <span class="data-value" id="rotation">220 km/s</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="galaxyRotation" style="width: 45%"></div>
+            </div>
+        </div>
+        
+        <!-- Controls Panel -->
+        <div class="hud-panel top-right">
+            <div class="panel-title">Navigation</div>
+            <div class="controls">
+                <button class="control-btn active" id="autoRotate">Auto Rotate</button>
+                <button class="control-btn" id="showPlanets">Show Planets</button>
+                <button class="control-btn" id="showNebulae">Show Nebulae</button>
+                <button class="control-btn" id="deepScan">Deep Scan</button>
+            </div>
+        </div>
+        
+        <!-- Object Information Panel -->
+        <div class="hud-panel bottom-left">
+            <div class="panel-title">Stellar Objects</div>
+            <div class="data-item">
+                <span class="data-label">Selected:</span>
+                <span class="data-value" id="selectedObject">None</span>
+            </div>
+            <div class="data-item">
+                <span class="data-label">Type:</span>
+                <span class="data-value" id="objectType">-</span>
+            </div>
+            <div class="data-item">
+                <span class="data-label">Mass:</span>
+                <span class="data-value" id="objectMass">-</span>
+            </div>
+            <div class="data-item">
+                <span class="data-label">Temperature:</span>
+                <span class="data-value" id="objectTemp">-</span>
+            </div>
+            <div class="data-item">
+                <span class="data-label">Age:</span>
+                <span class="data-value" id="objectAge">-</span>
+            </div>
+        </div>
+        
+        <!-- System Status Panel -->
+        <div class="hud-panel bottom-right">
+            <div class="panel-title">System Status</div>
+            <div class="data-item">
+                <span class="data-label">FPS:</span>
+                <span class="data-value" id="fps">60</span>
+            </div>
+            <div class="data-item">
+                <span class="data-label">Particles:</span>
+                <span class="data-value" id="particleCount">0</span>
+            </div>
+            <div class="data-item">
+                <span class="data-label">Memory:</span>
+                <span class="data-value" id="memory">85%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="systemLoad" style="width: 75%"></div>
+            </div>
+        </div>
+        
+        <!-- Scanner -->
+        <div class="scanner" id="scanner"></div>
+        
+        <!-- Object Info Tooltip -->
+        <div class="object-info" id="objectInfo">
+            <div class="object-name" id="infoName"></div>
+            <div class="object-type" id="infoType"></div>
+            <div class="data-item">
+                <span class="data-label">Distance:</span>
+                <span class="data-value" id="infoDistance"></span>
+            </div>
+            <div class="data-item">
+                <span class="data-label">Magnitude:</span>
+                <span class="data-value" id="infoMagnitude"></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- Main application script -->
+    <script src="galaxy.js"></script>
+    <!-- If your JS file lives in a subfolder, use e.g. src="js/main.js" -->
+</body>
+</html>
