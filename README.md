@@ -1,3 +1,5 @@
+<img width="1030" height="120" alt="Screenshot 2025-10-06 at 9 29 57 AM" src="https://github.com/user-attachments/assets/a9c248ea-ed41-47d0-bdb0-59cad120e440" />
+
 # cosmic_partical_symphony
 Cosmic_Particle_Symphony” is a mesmerizing fusion of science and art, where swirling particles dance in harmony like a celestial orchestra. It captures the hidden rhythms of the universe, blending energy, motion, and light into a cosmic performance that evokes wonder and infinite possibilities.
 # 3D Milky Way Galaxy Explorer
@@ -6,6 +8,7 @@ Lightweight browser-based 3D visualization of a Milky Way-like galaxy using Thre
 
 ## Files
 - `galaxy.html` — Main HTML file. Links `galaxy.css`, Three.js (CDN), and `galaxy.js`.
+
 - `galaxy.css` — Styles for HUD, loader, cursor and tooltip.
 - `galaxy.js` — Main application script that builds the scene, handles input, and runs the animation loop.
 - `README.md` — This file.
